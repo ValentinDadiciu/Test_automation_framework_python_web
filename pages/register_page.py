@@ -10,16 +10,16 @@ class RegisterPage(BasePage):
     INPUT_LAST_NAME = (By.ID, "lastname")
     INPUT_EMAIL = (By.ID, "email_address")
     INPUT_PASSWORD = (By.ID, "password")
-    INPUT_PASSWORD_CONFIRM = (By.ID, "password-confirmation")
+    INPUT_PASSWORD_CONFIRMATION = (By.ID, "password-confirmation")
     BUTTON_REGISTER = (By.CSS_SELECTOR, ".action.submit")
-    MESSAGE_SUCCESS = (By.CLASS_NAME, "message-success")
+    MESSAGE_SUCCESS_REGISTER = (By.CLASS_NAME, "message-success")
     REGISTER_PAGE_URL = 'https://magento.softwaretestingboard.com/customer/account/create/'
 
     ERROR_FIRST_NAME = (By.ID, "firstname-error")
     ERROR_LAST_NAME = (By.ID, "lastname-error")
     ERROR_EMAIL = (By.ID, "email_address-error")
     ERROR_PASSWORD = (By.ID, "password-error")
-    ERROR_CONFIRM_PASSWORD = (By.ID, "password-confirmation-error")
+    ERROR_CONFIRM_PASS = (By.ID, "password-confirmation-error")
 
 
     def open(self):
@@ -36,25 +36,24 @@ class RegisterPage(BasePage):
         self.type(self.INPUT_EMAIL, text)
 
     def set_unique_email(self):
-        number = random.randint(0, 9999999999999999)
-        email_address = f"popescu_{number}@gmail.com"
+        number = random.randint(0, 999999999999999999)
+        email_address = f"Popescu_{number}@gmail.com"
         self.set_email(email_address)
 
     def set_password(self, text):
         self.type(self.INPUT_PASSWORD, text)
 
     def set_password_confirm(self, text):
-        self.type(self.INPUT_PASSWORD_CONFIRM, text)
+        self.type(self.INPUT_PASSWORD_CONFIRMATION, text)
 
     def click_register_button(self):
-        self.driver.implicitly_wait(3)
         self.find(self.BUTTON_REGISTER).click()
 
     def verify_success_message_displayed(self):
-        assert self.find(self.MESSAGE_SUCCESS).is_displayed()
+        assert self.find(self.MESSAGE_SUCCESS_REGISTER).is_displayed()
 
     def verify_success_message_contains_text(self, text):
-        assert self.find(self.MESSAGE_SUCCESS).text == text
+        assert self.find(self.MESSAGE_SUCCESS_REGISTER).text == text
 
     def verify_url(self):
         assert self.driver.current_url == self.REGISTER_PAGE_URL
@@ -73,4 +72,4 @@ class RegisterPage(BasePage):
         assert self.find(self.ERROR_PASSWORD).is_displayed(), 'password not found'
 
     def verify_confirm_password_error_displayed(self):
-        assert self.find(self.ERROR_CONFIRM_PASSWORD).is_displayed()
+        assert self.find(self.ERROR_CONFIRM_PASS).is_displayed()

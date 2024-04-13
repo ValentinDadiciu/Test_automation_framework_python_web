@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Test_Automation_Framework_Python_Web.iml" filepath="$PROJECT_DIR$/.idea/Test_Automation_Framework_Python_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TEST_AUTOMATION_FRAMEWORK_PYTHON_BDD_MAGENTO.iml" filepath="$PROJECT_DIR$/.idea/TEST_AUTOMATION_FRAMEWORK_PYTHON_BDD_MAGENTO.iml" />
     </modules>
   </component>
 </project>

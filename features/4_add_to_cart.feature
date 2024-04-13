@@ -2,7 +2,7 @@ Feature: Add to cart
 
   Background: Open home page
     Given I am on the home page
-
+  @main
   Scenario: Add to cart
     When I enter "troy" in the search filed
     And I click the search magnifying button

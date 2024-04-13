@@ -1,4 +1,4 @@
-# Project BDD Testing Framework
+# TEST_AUTOMATION_FRAMEWORK_PYTHON_BDD_MAGENTO
 
 ##### I conducted tests on various functionalities of the Magento website. I verified the integrity and functionality of the login and registration pages, tested the process of adding products to the shopping cart, and confirmed its proper functioning. Additionally, I explored the news page and tested the search button. During the tests, I ensured that products added to the shopping cart were successfully selected, including specifying the desired size and color.
 
@@ -38,10 +38,12 @@ This test verifies the functionality of adding a product to the shopping cart on
 2. Select the size and color options for the product.
 3. Add the product to the shopping cart.
 4. Verify that the added product appears in the shopping cart with a quantity of "1" item.
+5. Review on the product "tees"
+6. Place the order for one product.
 
 Essentially, this test ensures that the functionality of adding products to the shopping cart works correctly and that users can successfully perform this action on the website.
 
 
 # Summary:
 - The Test Automation Framework Python Web facilitates the adoption of best testing practices and promotes efficient software development through the BDD approach.
-- The project includes 11 successful test scenarios, providing comprehensive coverage of the tested functionalities.
+- The project includes 12 successful test scenarios, providing comprehensive coverage of the tested functionalities.

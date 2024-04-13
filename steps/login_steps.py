@@ -1,13 +1,17 @@
 from behave import *
 
-@given("I am on the login page")
+@given('I am on the login page "{url}"')
+def step_impl(context, url):
+    context.login_page.open(url)
+
+@when("I click Consent button to use of my date")
 def step_impl(context):
-    context.login_page.open()
+    context.login_page.click_consent_button()
 
 
-@then('The URL of the page is "https://magento.softwaretestingboard.com/customer/account/login"')
-def step_impl(context):
-    context.login_page.verify_url()
+@then('The login URL of the page is "{url}"')
+def step_impl(context, url):
+    context.login_page.verify_url(url)
 
 @when('I enter "{text}" as email')
 def step_impl(context, text):
@@ -21,6 +25,6 @@ def step_impl(context, text):
 def step_impl(context):
     context.login_page.click_signin_button()
 
-@then('I should see "The account sign-in was incorrect or your account is disabled temporarily." message')
-def step_impl(context):
-    context.login_page.verify_signin_error_message('The account sign-in was incorrect or your account is disabled temporarily.')
+@then('I should see "{message}" message')
+def step_impl(context, message):
+    context.login_page.verify_signin_error_message(message)

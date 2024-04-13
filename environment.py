@@ -5,6 +5,7 @@ from pages.register_page import RegisterPage
 from pages.home_page import HomePage
 from pages.search_results_page import SearchResultsPage
 
+
 def before_all(context):
     context.browser = Browser()
     context.login_page = LoginPage()

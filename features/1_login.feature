@@ -1,11 +1,12 @@
 Feature: Login Page
 
   Background: Open login page
-    Given I am on the login page
+    Given I am on the login page "https://magento.softwaretestingboard.com/customer/account/login"
 
-  @smoke @regression
+  @login @regression
   Scenario: Check that the URL is correct
-    Then The URL of the page is "https://magento.softwaretestingboard.com/customer/account/login"
+    When I click Consent button to use of my date
+    Then The login URL of the page is "https://magento.softwaretestingboard.com/customer/account/login"
 
   @regression
   Scenario Outline: Login with unregistered email
@@ -18,4 +19,3 @@ Feature: Login Page
       | vali444@gmail.com    | 12345678       |
       | vali555@gmail.com    | dsfdfg4        |
       | vali446@gmail.com    | sdfsfsfdfttg   |
-      | vali777@gmail.com    | ewrewrfjy      |
